@@ -1,9 +1,9 @@
 idea:
     build: .
     labels:
-        org.kurron.description: "JetBrains PyCharm Python IDE"
-        org.kurron.version: "5.0.1"
-    container_name: "pycharm"
+        org.kurron.description: "JetBrains CLion C++ IDE"
+        org.kurron.version: "1.2.1"
+    container_name: "clion"
     net: "host"
     volumes:
         - /tmp/.X11-unix:/tmp/.X11-unix

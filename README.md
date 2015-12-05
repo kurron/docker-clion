@@ -1,5 +1,5 @@
 #Overview
-This project is a simple Docker image that runs [JetBrains PyCharm IDE](http://www.jetbrains.com/).
+This project is a simple Docker image that runs [JetBrains CLion IDE](http://www.jetbrains.com/).
 
 #Prerequisites
 * a working [Docker](http://docker.io) engine
