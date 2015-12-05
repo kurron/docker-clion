@@ -1,0 +1,13 @@
+idea:
+    build: .
+    labels:
+        org.kurron.description: "JetBrains PyCharm Python IDE"
+        org.kurron.version: "5.0.1"
+    container_name: "pycharm"
+    net: "host"
+    volumes:
+        - /tmp/.X11-unix:/tmp/.X11-unix
+        - /home/vagrant:/home/developer
+    environment:
+        DISPLAY: unix:0.0
+    user: 1000:1000
