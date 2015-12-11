@@ -2,7 +2,7 @@ FROM kurron/docker-jetbrains-base:latest
 
 MAINTAINER Ron Kurr <kurr@kurron.org>
 
-LABEL org.kurron.ide.name="CLion" org.kurron.ide.version=1.2.1 
+LABEL org.kurron.ide.name="CLion" org.kurron.ide.version=1.2.2
 
 # Install make and compilers
 RUN apt-get update && \
@@ -11,7 +11,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
 
-ADD http://download.jetbrains.com/cpp/clion-1.2.1.tar.gz /tmp/ide.tar.gz
+ADD http://download.jetbrains.com/cpp/clion-1.2.2.tar.gz /tmp/ide.tar.gz
 
 RUN mkdir -p /opt/ide && \
     tar zxvf /tmp/ide.tar.gz --strip-components=1 -C /opt/ide && \
