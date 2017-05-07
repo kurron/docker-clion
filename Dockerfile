@@ -11,7 +11,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
 
-ADD https://download.jetbrains.com/cpp/CLion-2016.2.3.tar.gz /tmp/ide.tar.gz
+ADD https://download.jetbrains.com/cpp/CLion-2017.1.1.tar.gz /tmp/ide.tar.gz
 
 RUN mkdir -p /opt/ide && \
     tar zxvf /tmp/ide.tar.gz --strip-components=1 -C /opt/ide && \
