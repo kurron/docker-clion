@@ -1,8 +1,12 @@
-FROM kurron/docker-jetbrains-base:latest
+FROM kurron/docker-azul-jdk-8-build:latest
 
 MAINTAINER Ron Kurr <kurr@kurron.org>
 
-LABEL org.kurron.ide.name="CLion" org.kurron.ide.version=1.2.2
+ENV CL_JDK /usr/lib/jvm/zulu-8-amd64
+
+ENTRYPOINT ["/opt/clion-2017.2/bin/clion.sh"]
+
+USER root
 
 # Install make and compilers
 RUN apt-get update && \
@@ -11,14 +15,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
 
-ADD https://download.jetbrains.com/cpp/CLion-2017.1.1.tar.gz /tmp/ide.tar.gz
+ADD https://download.jetbrains.com/cpp/CLion-2017.2.tar.gz /opt
 
-RUN mkdir -p /opt/ide && \
-    tar zxvf /tmp/ide.tar.gz --strip-components=1 -C /opt/ide && \
-    rm /tmp/ide.tar.gz
+RUN rm -rf /opt/clion-2017.2/jre64
 
-ENV CL_JDK=/usr/lib/jvm/oracle-jdk-8
+USER powerless
 
-USER developer:developer
-WORKDIR /home/developer
-ENTRYPOINT ["/opt/ide/bin/clion.sh"]
